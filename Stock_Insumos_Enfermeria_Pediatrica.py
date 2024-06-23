@@ -65,7 +65,7 @@ def menu():
     print(colorama.Fore.CYAN +"4.-" + colorama.Fore.RESET + "Para eliminar un insumo ")
     print(colorama.Fore.CYAN +"5.-" + colorama.Fore.RESET + "Para solicitar un insumo ")
     print(colorama.Fore.CYAN +"6.-" + colorama.Fore.RESET + "Para listar los insumo ")
-    op=int(input("Seleccione una opción: "))
+    op=input("Seleccione una opción: ")#le quito el int() porque no necesito que sea un número, sino un string
     return op
 
 def agregarInsumo():
@@ -81,22 +81,32 @@ def madificarInsumo():
 # Programa Principal
 
 identificarProfesional()
-menu()
+menuOpciones=menu() #esta linea es la que llama a la función menu() y guarda el valor de retorno en la variable menuOpciones
 
-menuOpciones= input("Ingrese la opción: ")
+#menuOpciones= input("Ingrese la opción: ") Esta linea es innecesaria porque ya se encuentra en la función menu()
 while menuOpciones != "0":
     if menuOpciones == "1":
         print("Ud. puede agregar un insumo.-")
-    elif menuOpciones ==" 2":
+        input("Presione enter para continuar.-") #para poder leer el mensaje anterior antes de volver a mostrar el menú 
+    elif menuOpciones =="2":
         print("Ud. puede modificar un insumo.-")
+        input("Presione enter para continuar.-") #para poder leer el mensaje anterior antes de volver a mostrar el menú
     elif menuOpciones == "3":
         print("Ud. puede eliminar un insumo.-")
+        input("Presione enter para continuar.-") #para poder leer el mensaje anterior antes de volver a mostrar el menú
     elif menuOpciones == "4":
         print("Ud. puede buscar un insumo.-")
+        input("Presione enter para continuar.-") #para poder leer el mensaje anterior antes de volver a mostrar el menú
     elif menuOpciones == "5":
         print("Ud. puede listar un insumo.-")
+        input("Presione enter para continuar.-") #para poder leer el mensaje anterior antes de volver a mostrar el menú
+    elif menuOpciones == "0":
+        print("Gracias por utilizar el programa.-")
+        input("Presione enter para salir.-") #para poder leer el mensaje anterior antes de volver a mostrar el menú
     else: # Termina con else porque no inicie con True el bucle while, sino debo colocar break antes del else.-
         print("La opción no es válida! Presione enter para continuar.- ")
-
+        input("Presione enter para continuar.-") #para poder leer el mensaje anterior antes de volver a mostrar el menú
+    #muestro nuevamente el menú para que el usuario pueda seleccionar otra opción
+    menuOpciones=menu() #esta linea es la que llama a la función menu() y guarda el valor de retorno en la variable menuOpcionesstock
     
     
